@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Sophia ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #17120e;
+            color: #3c2920;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        /* CAPA */
+
+        .capa {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(20, 10, 5, 0.75),
+                    rgba(20, 10, 5, 0.75)
+                ),
+                url("img/foto-capa.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .capa-conteudo {
+            padding: 30px;
+        }
+
+        .pequeno {
+            letter-spacing: 5px;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        .capa h1 {
+            font-size: clamp(45px, 9vw, 90px);
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .capa h1 span {
+            color: #d9a441;
+            font-style: italic;
+        }
+
+        .data {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 45px;
+        }
+
+        button {
+            background: #d4a23a;
+            border: none;
+            padding: 16px 32px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            background: #e2b454;
+        }
+
+        /* CARTA */
+
+        .carta {
+            background:
+                radial-gradient(
+                    circle at top,
+                    #4b3629,
+                    #1c130e 70%
+                );
+        }
+
+        .pagina {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 80px 20px;
+        }
+
+        .papel {
+            width: min(900px, 100%);
+            min-height: 600px;
+
+            padding: 70px;
+
+            background: #e8d5ad;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.55);
+
+            position: relative;
+        }
+
+        .numero {
+            color: #a47832;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+        .papel h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: normal;
+            margin-bottom: 35px;
+        }
+
+        .papel p {
+            font-size: 19px;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .ornamento {
+            text-align: center;
+            font-size: 40px;
+            color: #b8862c;
+            margin: 50px 0;
+        }
+
+        /* FORMULÁRIO */
+
+        .formulario {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+
+            background: rgba(255,255,255,0.4);
+
+            border: none;
+            border-bottom: 2px solid #9c7434;
+
+            outline: none;
+
+            font-size: 16px;
+        }
+
+        .local {
+            margin-bottom: 25px;
+        }
+
+        #erro {
+            color: #8e2525;
+            text-align: center;
+            font-weight: bold;
+            min-height: 30px;
+        }
+
+        /* CONTADOR */
+
+        #tempo-section {
+            display: none;
+        }
+
+        .contador {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .contador div {
+            text-align: center;
+            padding: 25px 10px;
+            border: 1px solid rgba(100,70,40,0.35);
+            background: rgba(255,255,255,0.18);
+        }
+
+        .contador strong {
+            display: block;
+            font-size: 42px;
+            font-weight: normal;
+            color: #855d20;
+        }
+
+        .contador span {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* CARTA PRINCIPAL */
+
+        .conteudo-carta p {
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        .assinatura {
+            font-family: cursive;
+            font-size: 40px !important;
+            color: #815a24;
+        }
+
+        .foto-carta {
+            display: block;
+            width: 75%;
+            max-height: 500px;
+            object-fit: cover;
+            margin: 50px auto 0;
+
+            box-shadow:
+                8px 8px 0 rgba(90,60,30,0.25);
+        }
+
+        /* ÁLBUM */
+
+        .fotos {
+            margin-top: 50px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 40px;
+        }
+
+        .foto {
+            background: white;
+            padding: 5px;
+
+            box-shadow:
+                0 10px 20px rgba(0,0,0,0.3);
+
+            transition: 0.4s;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .foto:nth-child(1) {
+            transform: rotate(-3deg);
+        }
+
+        .foto:nth-child(2) {
+            transform: rotate(3deg);
+        }
+
+        .foto:nth-child(3) {
+            transform: rotate(2deg);
+        }
+
+        .foto:nth-child(4) {
+            transform: rotate(-2deg);
+        }
+
+        .foto:hover {
+            transform: rotate(0deg) scale(1.04);
+        }
+
+        /* AMOR */
+
+        .amor h3 {
+            font-size: 28px;
+            font-weight: normal;
+            color: #8b6427;
+            margin-bottom: 35px;
+        }
+
+        .definicao {
+            padding: 25px;
+            border-left: 3px solid #a4772d;
+        }
+
+        .amor-final {
+            margin-top: 50px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .nome-amor {
+            text-align: center;
+            font-size: 50px !important;
+            font-family: cursive;
+            color: #8b6323;
+        }
+
+        /* FINAL */
+
+        .final {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #4b3527,
+                    #120c08
+                );
+
+            color: #f4e8cd;
+        }
+
+        .coracao {
+            color: #d6a83d;
+            font-size: 100px;
+            animation: pulsar 2s infinite;
+        }
+
+        .final-frase {
+            font-size: clamp(22px, 4vw, 35px);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .linha {
+            width: 150px;
+            height: 1px;
+            background: #c69b43;
+            margin: 45px auto;
+        }
+
+        .final h2 {
+            font-family: cursive;
+            font-size: clamp(45px, 8vw, 75px);
+            font-weight: normal;
+            color: #e0b65c;
+        }
+
+        .final-data {
+            margin-top: 20px;
+            letter-spacing: 5px;
+            color: #bfa77c;
+        }
+
+        @keyframes pulsar {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            .pagina {
+                padding: 40px 12px;
+            }
+
+            .papel {
+                padding: 45px 25px;
+            }
+
+            .formulario {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contador {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contador strong {
+                font-size: 30px;
+            }
+
+            .fotos {
+                grid-template-columns: 1fr;
+            }
+
+            .foto-carta {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- CAPA -->
+
+<section class="capa">
+
+    <div class="capa-conteudo">
+
+        <p class="pequeno">
+            UMA CARTA PARA O MEU AMOR
+        </p>
+
+        <h1>
+            Gabriel <span>&</span> Sophia
+        </h1>
+
+        <p class="data">
+            Desde 01 de novembro de 2024
+        </p>
+
+        <button onclick="abrirCarta()">
+            Abrir nossa história ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<main class="carta">
+
+    <!-- INTRODUÇÃO -->
+
+    <section class="pagina">
+
+        <div class="papel">
+
+            <p class="numero">01</p>
+
+            <h2>
+                Para você, Sophia...
+            </h2>
+
+            <p>
+                Existem histórias que começam de repente,
+                outras que parecem ter sido escritas muito
+                antes de acontecerem.
+            </p>
+
+            <p>
+                A nossa talvez seja um pouco dos dois.
+            </p>
+
+            <p>
+                E hoje eu quero te convidar para voltar comigo
+                ao começo de tudo.
+            </p>
+
+            <div class="ornamento">
+                ✦
+            </div>
+
+            <p style="text-align:center;">
+                Continue descendo...
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PERGUNTA -->
+
+    <section class="pagina">
+
+        <div class="papel">
+
+            <p class="numero">02</p>
+
+            <h2>
+                Antes de continuar...
+            </h2>
+
+            <p>
+                Quero saber se você realmente lembra
+                do dia em que a nossa história começou.
+            </p>
+
+            <p>
+                Quando começou a nossa história?
+            </p>
+
+            <div class="formulario">
+
+                <div>
+                    <label>Dia</label>
+                    <input id="dia" type="number" placeholder="DD">
+                </div>
+
+                <div>
+                    <label>Mês</label>
+                    <input id="mes" type="number" placeholder="MM">
+                </div>
+
+                <div>
+                    <label>Ano</label>
+                    <input id="ano" type="number" placeholder="AAAA">
+                </div>
+
+                <div>
+                    <label>Hora</label>
+                    <input id="hora" type="time">
+                </div>
+
+            </div>
+
+            <label>Local</label>
+
+            <input
+                id="local"
+                class="local"
+                type="text"
+                placeholder="Montes Claros"
+            >
+
+            <button onclick="verificar()">
+                Descobrir ❤️
+            </button>
+
+            <p id="erro"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTADOR -->
+
+    <section
+        id="tempo-section"
+        class="pagina">
+
+        <div class="papel">
+
+            <p class="numero">03</p>
+
+            <h2>
+                Desde aquele momento...
+            </h2>
+
+            <p>
+                Já passou todo esse tempo desde que
+                começamos a escrever a nossa história.
+            </p>
+
+            <div class="contador">
+
+                <div>
+                    <strong id="anos">0</strong>
+                    <span>anos</span>
+                </div>
+
+                <div>
+                    <strong id="meses">0</strong>
+                    <span>meses</span>
+                </div>
+
+                <div>
+                    <strong id="dias">0</strong>
+                    <span>dias</span>
+                </div>
+
+                <div>
+                    <strong id="horas">0</strong>
+                    <span>horas</span>
+                </div>
+
+                <div>
+                    <strong id="minutos">0</strong>
+                    <span>minutos</span>
+                </div>
+
+                <div>
+                    <strong id="segundos">0</strong>
+                    <span>segundos</span>
+                </div>
+
+            </div>
+
+            <p style="text-align:center;">
+                E enquanto o tempo continuar passando,
+                eu quero continuar vivendo cada segundo
+                ao seu lado.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARTA -->
+
+    <section class="pagina">
+
+        <div class="papel">
+
+            <p class="numero">04</p>
+
+            <h2>
+                Uma carta para você
+            </h2>
+
+            <div class="conteudo-carta">
+
+                <p>
+                    Minha princesa,
+                </p>
+
+                <p>
+                    ESCREVA AQUI A SUA CARTA PARA A SOPHIA.
+                </p>
+
+                <p>
+                    Coloque aqui tudo aquilo que você sente,
+                    suas lembranças favoritas e tudo aquilo
+                    que você quer dizer para ela.
+                </p>
+
+                <p>
+                    Com amor,
+                </p>
+
+                <p class="assinatura">
+                    Gabriel ❤️
+                </p>
+
+            </div>
+ 
+            <img
+                src="img/Foto-carta-chat.png"
+                class="foto-carta"
+                alt="Gabriel e Sophia"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- FOTOS -->
+
+    <section class="pagina">
+
+        <div class="papel">
+
+            <p class="numero">05</p>
+
+            <h2>
+                Nossas lembranças
+            </h2>
+
+            <p>
+                Algumas fotografias conseguem guardar
+                aquilo que as palavras não conseguem explicar.
+            </p>
+
+            <div class="fotos">
+
+                <div class="foto">
+                    <img src="img/foto-album-chat 1.png">
+                </div>
+
+                <div class="foto">
+                    <img src="img/Foto-album-chat 2.png">
+                </div>
+
+                <div class="foto">
+                    <img src="img/foto-album-chat 5.png">
+                </div>
+
+                <div class="foto">
+                    <img src="img/foto-album-chat 4.png">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AMOR -->
+
+    <section class="pagina">
+
+        <div class="papel">
+
+            <p class="numero">06</p>
+
+            <h2>
+                Mas afinal...
+            </h2>
+
+            <h3>
+                O que é o amor?
+            </h3>
+
+            <div class="definicao">
+
+                <p>
+                    Amor é um substantivo que significa
+                    um forte sentimento de afeto, cuidado e desejo
+                    pelo bem de outra pessoa ou coisa.
+                </p>
+
+                <p>
+                    Segundo o Dicionario, o amor possui vários sentidos:
+                </p>
+
+                <p>
+                    <strong>Afeto:</strong>
+                    sentimento de carinho ou amizade profunda
+                    pelo próximo.
+                </p>
+
+                <p>
+                    <strong>Paixão:</strong>
+                    desejo forte e atração intensa por alguém.
+                </p>
+
+                <p>
+                    <strong>Dedicação:</strong>
+                    cuidado exagerado ou gosto muito vivo por algo.
+                </p>
+
+                <p>
+                    <strong>Pessoa amada:</strong>
+                    forma carinhosa de se referir a alguém querido,
+                    como "meu amor".
+                </p>
+
+            </div>
+
+            <p class="amor-final">
+                E para mim, amor também tem o seu nome.
+            </p>
+
+            <p class="nome-amor">
+                Sophia.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="final">
+
+        <div>
+
+            <div class="coracao">
+                ♥
+            </div>
+
+            <p class="final-frase">
+                Para sempre.
+            </p>
+
+            <p class="final-frase">
+                Toda página vira uma nova lembrança.
+            </p>
+
+            <p class="final-frase">
+                A vontade de ficar é que não.
+            </p>
+
+            <div class="linha"></div>
+
+            <h2>
+                Gabriel & Sophia
+            </h2>
+
+            <p class="final-data">
+                01 • 11 • 2024 / ∞ ...
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+    const dataInicio =
+        new Date(2024, 10, 1, 18, 30, 0);
+
+
+    function abrirCarta() {
+
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    function verificar() {
+
+        const dia =
+            document.getElementById("dia").value;
+
+        const mes =
+            document.getElementById("mes").value;
+
+        const ano =
+            document.getElementById("ano").value;
+
+        const hora =
+            document.getElementById("hora").value;
+
+        const local =
+            document
+            .getElementById("local")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+        const correto =
+
+            Number(dia) === 1 &&
+            Number(mes) === 11 &&
+            Number(ano) === 2024 &&
+            hora === "18:30" &&
+            local === "montes claros";
+
+
+        if (!correto) {
+
+            document.getElementById("erro").innerHTML =
+                "Tá errado fia 😂❤️<br>" +
+                "Tenta lembrar direito.";
+
+            return;
+
+        }
+
+
+        document.getElementById("erro").innerHTML = "";
+
+
+        document.getElementById(
+            "tempo-section"
+        ).style.display = "flex";
+
+
+        atualizarContador();
+
+
+        document.getElementById(
+            "tempo-section"
+        ).scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+
+    function atualizarContador() {
+
+        const agora = new Date();
+
+        let anos =
+            agora.getFullYear()
+            - dataInicio.getFullYear();
+
+        let meses =
+            agora.getMonth()
+            - dataInicio.getMonth();
+
+        let dias =
+            agora.getDate()
+            - dataInicio.getDate();
+
+        let horas =
+            agora.getHours()
+            - dataInicio.getHours();
+
+        let minutos =
+            agora.getMinutes()
+            - dataInicio.getMinutes();
+
+        let segundos =
+            agora.getSeconds()
+            - dataInicio.getSeconds();
+
+
+        if (segundos < 0) {
+
+            segundos += 60;
+            minutos--;
+
+        }
+
+
+        if (minutos < 0) {
+
+            minutos += 60;
+            horas--;
+
+        }
+
+
+        if (horas < 0) {
+
+            horas += 24;
+            dias--;
+
+        }
+
+
+        if (dias < 0) {
+
+            const ultimoDia =
+                new Date(
+                    agora.getFullYear(),
+                    agora.getMonth(),
+                    0
+                ).getDate();
+
+            dias += ultimoDia;
+            meses--;
+
+        }
+
+
+        if (meses < 0) {
+
+            meses += 12;
+            anos--;
+
+        }
+
+
+        document.getElementById("anos").innerText =
+            anos;
+
+        document.getElementById("meses").innerText =
+            meses;
+
+        document.getElementById("dias").innerText =
+            dias;
+
+        document.getElementById("horas").innerText =
+            horas;
+
+        document.getElementById("minutos").innerText =
+            minutos;
+
+        document.getElementById("segundos").innerText =
+            segundos;
+
+    }
+
+
+    setInterval(
+        atualizarContador,
+        1000
+    );
+
+</script>
+
+</body>
+</html>
